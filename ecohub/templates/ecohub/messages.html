@@ -1,0 +1,58 @@
+{% extends "ecohub/base.html" %}
+
+{% block title %}
+    EcoHub - Messages
+{% endblock %}
+
+{% block body %}
+    <ul class="nav nav-tabs" id="myTab" role="tablist">
+        <li class="nav-item">
+        <a class="nav-link active" id="home-tab" data-toggle="tab" href="#home" role="tab" aria-controls="home" aria-selected="true">Inbox</a>
+        </li>
+        <li class="nav-item">
+        <a class="nav-link" id="profile-tab" data-toggle="tab" href="#profile" role="tab" aria-controls="profile" aria-selected="false">Sent</a>
+        </li>
+    </ul>
+    <div class="tab-content" id="myTabContent">
+        <div class="tab-pane fade show active" id="home" role="tabpanel" aria-labelledby="home-tab">
+            <p>
+                <h2>Received messages:</h2>
+                <section class="messages" id="in_messages">
+                    <div class="list-group">
+                        <a href="#" class="list-group-item list-group-item-action active">
+                          Date-From-Project-Subject
+                        </a>
+                        {% if in_messages %}
+                            {% for m in in_messages %}
+                                <a href="{% url 'message_view' m.id %}" class="list-group-item list-group-item-action">{{ m.sent }} - {{ m.sender.first_name }} {{ m.sender.last_name }} - {{ m.project_reference }} - {{ m.get_subject_display }}</a>
+                            {% endfor %}
+                        {% else %}
+                            <p><h3>You have no messages.</h3></p>
+                        {% endif %}
+                    </div>
+                </section>
+            </p>
+        </div>
+        <div class="tab-pane fade" id="profile" role="tabpanel" aria-labelledby="profile-tab">
+            <p>
+                <h2>Sent messages:</h2>
+                <section class="messages" id="sent_messages">
+                    <section class="messages" id="in_messages">
+                        <div class="list-group">
+                            <a href="#" class="list-group-item list-group-item-action active">
+                              Date-From-Project-Subject
+                            </a>
+                            {% if sent_messages %}
+                                {% for m in sent_messages %}
+                                    <a href="{% url 'message_view' m.id %}" class="list-group-item list-group-item-action">{{ m.sent }} - {{ m.sender.first_name }} {{ m.sender.last_name }} - {{ m.project_reference }} - {{ m.get_subject_display }}</a>
+                                {% endfor %}
+                            {% else %}
+                                <p><h3>You have no messages.</h3></p>
+                            {% endif %} 
+                        </div>
+                    </section>
+                </section>
+            </p>
+        </div>
+    </div>    
+{% endblock %}

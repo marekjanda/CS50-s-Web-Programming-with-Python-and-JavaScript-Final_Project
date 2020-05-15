@@ -1,0 +1,20 @@
+{% extends "ecohub/base.html" %}
+
+{% block title %}
+EcoHub - {{ blog.title }}
+{% endblock %}
+
+{% block body %}
+    {% include 'ecohub/includes/blognav.html' %}
+    <div class="card blog" style="width: 80%;">
+        <div class="card-body">
+            <h5 class="card-title">{{ blog.title }}</h5>
+            <h6 class="card-subtitle mb-2 text-muted">{{ blog.published }}</h6>
+            <p class="card-text">{{ blog.abstract|safe }}</p>
+            <hr>
+            <p class="card-text">{{ blog.content|safe }}</p>
+            <hr>
+            <h6 class="card-subtitle mb-2 text-muted">{{ blog.author }}</h6>
+        </div>                    
+    </div>
+{% endblock %}

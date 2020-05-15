@@ -1,0 +1,163 @@
+footer {
+    vertical-align: bottom;
+    width: 100%;
+    padding-bottom: 5px;
+    font-size: 1rem;
+    color: black;
+    text-align: center;
+}
+
+.jumbotron {
+    margin-left: 10%;
+    margin-right: 10%;
+    margin-top: 2%;
+    width: 80%;
+}
+
+.login, .register {
+    text-align: center;
+    justify-content: center;
+    margin-bottom: 1rem;
+    margin-top: 1%;
+    width: 30%;
+    margin-left: 35%;
+}
+
+.regForm {
+    width: 50%;
+    justify-content: center;
+    text-align: center;
+    margin-left: 25%;
+}
+
+.row {
+    margin-top: 2%;
+    margin-bottom: 2%;
+}
+
+.card {
+    margin-top: 2%;
+    margin-bottom: 1%;
+    width: 80%;
+    justify-content: center;
+}
+
+.category_table, tr {
+    margin-top: 5%;
+    padding: 1rem;
+    border-top: 2px solid darkgray;
+    float: center;
+    text-align: center; }
+  
+  th {
+    background-color: white;
+    font-size: 20px; }
+  
+  td, th {
+    padding: 2rem; }
+  
+  tr:nth-child(even) {
+    background-color: #f2f2f2; }
+  
+  tr:hover {
+    background-color: #ccff99; }
+  
+  table.category_table {
+    width: 70%;
+    margin-left: 15%;
+    margin-right: 15%; }
+
+#id_title {
+    width: 85%;
+}
+
+.blogform {
+    justify-content: center;
+    margin-left: 5%;
+}
+
+.writingCard {
+    justify-content: center;
+    width: 90%;
+    margin-left: 5%;
+}
+
+.blog, .homecard, .article-card, .project-card {
+    justify-content: center;
+    width: 80%;
+    margin-left: 10%;
+}
+
+.project-card, .messages {
+    margin-top: 3%;
+    justify-content: center;
+    width: 90%;
+    margin-left: 5%;
+}
+
+.card-img-top {
+    height: 25rem;
+    width: fit-content;
+}
+
+/* on mobile browsers, I set a width of 100% */
+table.mceLayout, textarea.tinyMCE {
+    width: 100% !important;
+}
+
+/* on large screens, I use a different layout, so 600px are sufficient */
+@media only screen and (min-width: 800px) {
+    table.mceLayout, textarea.richEditor {
+       width: 800px !important;
+    }
+}
+
+/* make the toolbar wrap */
+.mceToolbar td {
+    display:table-row;
+    float: left;
+}
+.mceToolbar td:nth-of-type(11) {
+    clear: left;
+}
+
+/**
+ * The CSS shown here will not be introduced in the Quickstart guide, but shows
+ * how you can use CSS to style your Element's container.
+*/
+.StripeElement {
+    box-sizing: border-box;
+  
+    height: 40px;
+  
+    padding: 10px 12px;
+  
+    border: 1px solid transparent;
+    border-radius: 4px;
+    background-color: white;
+  
+    box-shadow: 0 1px 3px 0 #e6ebf1;
+    -webkit-transition: box-shadow 150ms ease;
+    transition: box-shadow 150ms ease;
+}
+  
+.StripeElement--focus {
+    box-shadow: 0 1px 3px 0 #cfd7df;
+}
+  
+.StripeElement--invalid {
+    border-color: #fa755a;
+}
+  
+.StripeElement--webkit-autofill {
+    background-color: #fefde5 !important;
+}
+
+.form-row {
+    width: 70%;
+    float: left;
+}
+
+.imgsource ul {
+    list-style-type: none;
+}

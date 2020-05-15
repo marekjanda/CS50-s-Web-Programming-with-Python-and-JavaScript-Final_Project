@@ -1,0 +1,82 @@
+{% extends "ecohub/base.html" %}
+
+{% block title %}
+EcoHub
+{% endblock %}
+
+{% block body %}
+    <div id="carouselExampleIndicators" class="carousel slide" data-ride="carousel">
+        <ol class="carousel-indicators">
+        <li data-target="#carouselExampleIndicators" data-slide-to="0" class="active"></li>
+        <li data-target="#carouselExampleIndicators" data-slide-to="1"></li>
+        <li data-target="#carouselExampleIndicators" data-slide-to="2"></li>
+        <li data-target="#carouselExampleIndicators" data-slide-to="3"></li>
+        </ol>
+        <div class="carousel-inner">
+            <div class="carousel-item active">
+                <div class="card mb-3 homecard">
+                    <img src="static/ecohub/Images/welcomeimg.jpg" class="card-img-top" alt="News Ilustration">
+                    <div class="card-body">
+                    <h3 class="card-title">{{ welcome }}</h3>
+                    </div>
+                </div>
+            </div>
+            <div class="carousel-item">
+                <div class="card mb-3 homecard">
+                    <img src="static/ecohub/Images/newsimg.jpg" class="card-img-top" alt="News Ilustration">
+                    <div class="card-body">
+                    <h3 class="card-title">News</h3>
+                    <p class="card-text">To see all the latest news from the technology world. To learn about more ecological sustainable way of doing things, visit the News section.</p>
+                    <p><a href="{% url 'news' %}" class="btn btn-primary">Go To News</a></p>
+                    </div>
+                </div>
+            </div>
+            <div class="carousel-item">
+                <div class="card mb-3 homecard">
+                    <img src="static/ecohub/Images/blogimg.jpg" class="card-img-top" alt="Blog ilustration">
+                    <div class="card-body">
+                    <h3 class="card-title">Blogs</h3>
+                    <p class="card-text">To enrich yourself with other peoples opinions on a sustainable way forward. To get motivation for your own work and projects, visit the Blogs section.</p>
+                    </div>
+                </div>
+            </div>
+            <div class="carousel-item">
+                <div class="card mb-3 homecard">
+                    <img src="static/ecohub/Images/projectimg.jpg" class="card-img-top" alt="Project ilustration">
+                    <div class="card-body">
+                    <h3 class="card-title">Projects</h3>
+                    <p class="card-text">To support ecological tech projects and help to build our future visit the Projects section.</p>
+                    </div>
+                </div>
+            </div>
+            <div class="carousel-item">
+                <div class="card mb-3 homecard">
+                    <img src="static/ecohub/Images/registerimg.jpg" class="card-img-top" alt="Register ilustration">
+                    <div class="card-body">
+                    <h3 class="card-title">Register</h3>
+                    <p class="card-text">Register and access all content.</p>
+                    <p><a href="{% url 'register' %}" class="btn btn-primary">Register</a></p>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <a class="carousel-control-prev" href="#carouselExampleIndicators" role="button" data-slide="prev" style="color: slategray;">
+            <span class="carousel-control-prev-icon" aria-hidden="true" style="color: slategray;"></span>
+            <span class="sr-only" style="color: slategray;">Previous</span>
+        </a>
+        <a class="carousel-control-next" href="#carouselExampleIndicators" role="button" data-slide="next" style="color: slategray;">
+            <span class="carousel-control-next-icon" aria-hidden="true" style="color: slategray;"></span>
+            <span class="sr-only" style="color: slategray;">Next</span>
+        </a>
+    </div>
+{% endblock %}
+{% block freepik %}
+    <hr>
+    <section class="imgsource">
+        <ul>
+            <li><a href="https://www.freepik.com/free-photos-vectors/nature">Nature photo created by freepik - www.freepik.com</a></li>
+            <li><a href="https://www.freepik.com/free-photos-vectors/background">Background photo created by rawpixel.com - www.freepik.com</a></li>
+            <li><a href="https://www.freepik.com/free-photos-vectors/business">Business photo created by jannoon028 - www.freepik.com</a></li>
+        </ul> 
+    </section>
+{% endblock %}    

@@ -1,0 +1,39 @@
+{% extends "ecohub/base.html" %}
+
+{% block title %}
+About EcoHub
+{% endblock %}
+
+{% block body %}
+    <div class="jumbotron">
+        <h1 class="display-4">Hello and Welcome to EcoHub!</h1>
+        <p class="lead">A hub of ecological technologies</p>
+        <hr class="my-4">
+        <section>
+            <p>At ecohub you can find all the latest news about ecological and enviroment friendly technologies. From the technologies of the past to
+                to the latest inventions. From growing Startups to biggest Corporation. From wisdom of our ancestors to wildest futuristic ideas.
+                You can find anything in one EcoHub.
+            </p>
+        </section>
+        
+        <section>
+            <p>
+                In our Blog section you can find the ideas and opinions of bloggers from all around the world. Are you looking for an inspiration 
+                or food for tought? EcoHub is the place. Do you want to become a blogger? Every user can write his own blogs. You are free to express
+                your ideas at our platform. EcoHub is the place to share ideas and build the future.
+            </p>
+        </section>
+        
+        <section>
+            <p>
+                Do you have a Startup or project which needs funding? EcoHub gives you a platform where you can present your project and request a funding.
+                From crowdfunding to big business investment or just colaboration and help from other tech people you can get all the funding and resources
+                you need. EcoHub helps you to bring your idea into reality and build the future.
+            </p>
+        </section>
+        
+        <p>
+            <a class="btn btn-primary btn-lg" href="{% url 'register' %}" role="button">Join EcoHub</a>
+        </p>        
+    </div>    
+{% endblock %}

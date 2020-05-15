@@ -1,0 +1,32 @@
+{% extends "ecohub/base.html" %}
+
+{% block title %}
+    EcoHub - {{ message.message_subject }} - {{ message.project_reference }}
+{% endblock %}
+
+{% block body %}
+    <div class="card blog" style="width: 80%;">
+        <div class="card-body">
+            <header>
+                <p>
+                    <strong>From: </strong>{{ message.sender.first_name }} {{ message.sender.last_name }}; email: {{ message.sender.email }}
+                </p>
+                <p>
+                   <strong>Project: </strong>{{ message.project_reference }}
+                </p>
+                <p>
+                    <strong>Subject: </strong>{{ message.get_subject_display }}
+                </p>            
+                <p>
+                    <strong>Date: </strong>{{ message.sent }}
+                </p>                
+            </header>            
+            <hr>
+            <article>
+                <p>
+                    {{ message.message_text }}
+                </p>
+            </article>        
+        </div>
+    </div>
+{% endblock %}

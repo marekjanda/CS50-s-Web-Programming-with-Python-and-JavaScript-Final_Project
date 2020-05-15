@@ -1,0 +1,51 @@
+{% extends "ecohub/base.html" %}
+
+{% block title %}
+    Home
+{% endblock %}
+
+{% block body %}
+    {% if user.is_authenticated %}
+        <!-- Card for news -->
+        <div class="card mb-3 homecard">
+            <img src="static/ecohub/Images/newsimg.jpg" class="card-img-top" alt="News Ilustration">
+            <div class="card-body">
+              <h3 class="card-title">News</h3>
+              <p class="card-text">To see all the latest news from the technology world. To learn about more ecological sustainable way of doing things, visit the News section.</p>
+              <p><a href="{% url 'news' %}" class="btn btn-primary">Go To News</a></p>
+            </div>
+        </div>
+
+        <!-- Card for blogs -->
+        <div class="card mb-3 homecard">
+            <img src="static/ecohub/Images/blogimg.jpg" class="card-img-top" alt="Blog ilustration">
+            <div class="card-body">
+              <h3 class="card-title">Blogs</h3>
+              <p class="card-text">To enrich yourself with other peoples opinions on a sustainable way forward. To get motivation for your own work and projects, visit the Blogs section.</p>
+              <p><a href="{% url 'blogs' %}" class="btn btn-primary">Go To Blogs</a></p>
+            </div>
+        </div>
+
+        <!-- Card for projects -->
+        <div class="card mb-3 homecard">
+            <img src="static/ecohub/Images/projectimg.jpg" class="card-img-top" alt="Project ilustration">
+            <div class="card-body">
+              <h3 class="card-title">Projects</h3>
+              <p class="card-text">To support ecological tech projects and help to build our future visit the Projects section.</p>
+              <p><a href="{% url 'projects' %}" class="btn btn-primary">Go To Projects</a></p>
+            </div>
+        </div>
+    {% else %}
+        <p>Sorry, you must be logged in to access this page!</p>
+    {% endif %}
+{% endblock %}
+{% block freepik %}
+    <hr>
+        <section class="imgsource">
+            <ul>
+                <li><a href="https://www.freepik.com/free-photos-vectors/business">Business vector created by freepik - www.freepik.com</a></li>
+                <li><a href="https://www.freepik.com/free-photos-vectors/abstract">Abstract vector created by pch.vector - www.freepik.com</a></li>
+                <li><a href="https://www.freepik.com/free-photos-vectors/business">Business photo created by onlyyouqj - www.freepik.com</a></li>
+            </ul>
+        </section>
+{% endblock %}

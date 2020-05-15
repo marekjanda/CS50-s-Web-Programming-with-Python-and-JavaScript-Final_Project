@@ -1,0 +1,30 @@
+{% extends "ecohub/base.html" %}
+
+{% block title %}
+EcoHub - Blogs
+{% endblock %}
+
+{% block body %}
+    {% include 'ecohub/includes/blognav.html' %}
+    {% if not blogs %}
+        <p>There are no blogs in this section</p>
+    {% else %}
+        <div class="container">
+            {% for blog in blogs %}
+                <div class="row">
+                    <div class="col">
+                        <div class="card" style="width: 100%;">
+                            <div class="card-body">
+                                <h5 class="card-title">{{ blog.title }}</h5>
+                                <h6 class="card-subtitle mb-2 text-muted">{{ blog.author }}</h6>
+                                <h6 class="card-subtitle mb-2 text-muted">{{ blog.published }}</h6>
+                                <p class="card-text">{{ blog.abstract|safe }}</p>
+                                <a href="{% url 'blog' blog.id %}" class="card-link">Full article</a>                    
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            {% endfor %}        
+        </div>
+    {% endif %}
+{% endblock %}

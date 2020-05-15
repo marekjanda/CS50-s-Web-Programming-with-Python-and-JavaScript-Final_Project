@@ -1,0 +1,32 @@
+{% extends "ecohub/base.html" %}
+
+{% block title %}
+EcoHub - Projects
+{% endblock %}
+
+{% block body %}
+    {% include 'ecohub/includes/projectnav.html' %}
+    {% if not projects %}
+        <p>There are no projects in this section</p>
+    {% else %}
+        <div class="container">
+            {% for project in projects %}
+                <div class="row">
+                    <div class="col">
+                        <div class="card" style="width: 100%;">
+                            <div class="card-body">
+                                <h5 class="card-title">{{ project.title }}</h5>
+                                <h6 class="card-subtitle mb-2 text-muted">{{ project.published }}</h6>
+                                <h6>{{ project.owner }}</h6>
+                                <p class="card-text">{{ project.abstract|safe }}</p>
+                                <hr>
+                                <p><h5>Funds: ${{ project.current_funds }} / ${{ project.target_funds }}</h5></p>
+                                <a href="{% url 'project' project.id %}" class="card-link">Project Page</a>                    
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            {% endfor %}        
+        </div>
+    {% endif %}
+{% endblock %}

@@ -1,0 +1,44 @@
+{% extends "ecohub/base.html" %}
+
+{% block title %}
+EcoHub - Write a blog
+{% endblock %}
+
+{% block media %}
+    {{ form.media }}
+{% endblock %}
+
+{% block body %}
+    {% include 'ecohub/includes/blognav.html' %}
+    <div class="card card-body writingCard">
+        <form method="POST" class="blogForm">
+            {% csrf_token %}
+            {{ form.media }}
+            <div class="form-group">
+                <h3>Title:</h3>
+                {{ form.title }}
+            </div>
+            <div class="form-group">
+                <h3>Category:</h3>
+                {{ form.category }}
+            </div>
+            <!--
+            <div class="form-group">
+                <h3>Date:</h3>
+                {{ form.date }}
+            </div>
+            -->            
+            <div class="form-group">
+                <h3>Abstract:</h3>
+                {{ form.abstract }}
+            </div>
+            <div class="form-group">
+                <h3>Blog text:</h3>
+                {{ form.content }}
+            </div>
+            <p>
+                <button type="submit" class="btn btn-primary">Post blog</button>
+            </p>   
+        </form>
+    </div>    
+{% endblock %}
